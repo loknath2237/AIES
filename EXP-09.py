@@ -1,0 +1,24 @@
+# Graph 3 (linear chain)
+graph = {
+    1: [2],
+    2: [3],
+    3: [4],
+    4: [5],
+    5: [6],
+    6: [7],
+    7: [8],
+    8: [9],
+    9: [10],
+    10: []
+}
+
+visited = set()
+
+def dfs(node):
+    if node not in visited:
+        print(node, end=" ")
+        visited.add(node)
+        for neighbor in graph[node]:
+            dfs(neighbor)
+
+dfs(1)
